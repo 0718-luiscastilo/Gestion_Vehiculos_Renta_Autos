@@ -8,7 +8,7 @@ class Vehiculo{
     private string estado;
     private int kilometros;
 
-    public int codigo{
+    public int Codigo{
         get {
             return codigo;
         }
@@ -16,7 +16,7 @@ class Vehiculo{
             codigo = value;
         }
     }
-    public string marca{
+    public string Marca{
         get {
             return marca;
         }
@@ -24,7 +24,7 @@ class Vehiculo{
             marca = value;
         }
     }
-    public string modelo{
+    public string Modelo{
         get {
             return modelo;
         }
@@ -32,7 +32,7 @@ class Vehiculo{
             modelo = value;
         }
     }
-    public int año{
+    public int Año{
         get {
             return año;
         }
@@ -40,7 +40,7 @@ class Vehiculo{
             año = value;
         }
     }
-    public string tipo{
+    public string Tipo{
         get {
             return tipo;
         }
@@ -48,7 +48,7 @@ class Vehiculo{
             tipo = value;
         }
     }
-    public string estado{
+    public string Estado{
         get {
             return estado;
         }
@@ -56,7 +56,7 @@ class Vehiculo{
             estado = value;
         }
     }
-    public int kilometros{
+    public int Kilometros{
         get {
             return kilometros;
         }
@@ -74,15 +74,51 @@ class Vehiculo{
         this.kilometros = kilometros;
     }
     public Vehiculo(){
-        codigo = 0000;
+        codigo = 0;
         marca = "Sin Marca";
         modelo = "000-000";
         año = 1990;
         tipo = "General";
-        estado = "No estados";
+        estado = "Sin estado";
         kilometros = 0;
     }
-
-
-
+    public void mostrarInformacion(){
+        Console.WriteLine( "Codigo: " + Codigo);
+        Console.WriteLine( "Marca: " + Marca);
+        Console.WriteLine( "Modelo: " + Modelo);
+        Console.WriteLine( "Año: " + Año);
+        Console.WriteLine( "Tipo: " + Tipo);
+        Console.WriteLine( "Estado: " + Estado);
+        Console.WriteLine( "Kilometros: " + Kilometros);
+    }
+    public void registrarKilometraje(int nuevoKilometraje){
+        if(nuevoKilometraje <= 0){
+            Console.WriteLine("El kilometraje no puede ser 0");
+        }else if(nuevoKilometraje <Kilometros){
+            Console.WriteLine("ERROR: no puede ser menor al kilometraje actual");
+        }else{
+            Kilometros =nuevoKilometraje;
+            Console.WriteLine("Kilometraje actualizado correctamente.");
+        } 
+    }
+    public void cambiarEstado(string nuevoEstado){
+        if (string.IsNullOrWhiteSpace(nuevoEstado)){
+            Console.WriteLine("ERROR: el estado no puede estar vacío.");
+        }else if (nuevoEstado.Equals("Disponible", StringComparison.OrdinalIgnoreCase)){
+            Estado = "Disponible";
+            Console.WriteLine("Estado actualizado correctamente.");
+        }else if (nuevoEstado.Equals("En mantenimiento", StringComparison.OrdinalIgnoreCase)){
+            Estado = "En mantenimiento";
+            Console.WriteLine("Estado actualizado correctamente.");
+        }else if (nuevoEstado.Equals("Fuera de servicio", StringComparison.OrdinalIgnoreCase)){
+            Estado = "Fuera de servicio";
+            Console.WriteLine("Estado actualizado correctamente.");
+        }else{
+            Console.WriteLine("ERROR: estado no válido.");
+            Console.WriteLine("Estados permitidos:");
+            Console.WriteLine("- Disponible");
+            Console.WriteLine("- En mantenimiento");
+            Console.WriteLine("- Fuera de servicio");
+        }
+    }
 }
