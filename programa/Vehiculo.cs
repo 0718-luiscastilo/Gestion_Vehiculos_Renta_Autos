@@ -52,17 +52,12 @@ class Vehiculo{
         get {
             return estado;
         }
-        set{
-            estado = value;
-        }
     }
     public int Kilometros{
         get {
             return kilometros;
         }
-        set{
-            kilometros = value;
-        }
+
     }
     public Vehiculo(int codigo, string marca, string modelo, int año, string tipo, string estado,int kilometros){
         this.codigo = codigo;
@@ -92,14 +87,15 @@ class Vehiculo{
         Console.WriteLine( "Kilometros: " + Kilometros);
     }
     public void registrarKilometraje(int nuevoKilometraje){
-        if(nuevoKilometraje <= 0){
-            Console.WriteLine("El kilometraje no puede ser 0");
-        }else if(nuevoKilometraje <Kilometros){
-            Console.WriteLine("ERROR: no puede ser menor al kilometraje actual");
+        if (nuevoKilometraje <= 0){
+            Console.WriteLine( "El kilometraje debe ser mayor que 0.");
+        }
+        else if (nuevoKilometraje < kilometros){
+            Console.WriteLine("ERROR: no puede ser menor al kilometraje actual.");
         }else{
-            Kilometros =nuevoKilometraje;
-            Console.WriteLine("Kilometraje actualizado correctamente.");
-        } 
+            kilometros = nuevoKilometraje;
+            Console.WriteLine( "Kilometraje actualizado correctamente.");
+        }
     }
     public void cambiarEstado(string nuevoEstado){
         if (string.IsNullOrWhiteSpace(nuevoEstado)){
@@ -120,5 +116,29 @@ class Vehiculo{
             Console.WriteLine("- En mantenimiento");
             Console.WriteLine("- Fuera de servicio");
         }
+    }
+    public int calucularCosto(int dias){
+        total = 250 * dias;
+        return total;
+    }
+     public int calcularCosto(int kilometrosTotales, int descuento){
+        int costoPorKilometro;
+        if (kilometrosTotales > 3000){
+            costoPorKilometro = 900;
+        }
+        else if (kilometrosTotales > 2000){
+            costoPorKilometro = 600;
+        }else if (kilometrosTotales > 1000){
+            costoPorKilometro = 300;
+        }else{
+            costoPorKilometro = 100;
+        }
+        int total = costoPorKilometro * kilometrosTotales;
+
+        int montoDescuento = total * descuento / 100;
+
+        total = total - montoDescuento;
+
+        return total;
     }
 }
