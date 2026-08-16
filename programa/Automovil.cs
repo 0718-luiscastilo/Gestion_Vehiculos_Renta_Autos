@@ -1,5 +1,5 @@
 using System;
-class Automovil : Vehiculo{
+class Automovil : Vehiculo, IMantenimiento{
     private int numeroPuertas;
     private string tipoTrasmision;
     private string tipoCombustible;
@@ -66,11 +66,24 @@ class Automovil : Vehiculo{
     public void CambiarTransmisión(string trasmision){
         tipoTrasmision = trasmision;
     }
-    public void mostrarespecificaciones(){
+    public override void mostrarInformacion(){
+        Console.WriteLine( "Codigo: " + Codigo);
+        Console.WriteLine( "Marca: " + Marca);
+        Console.WriteLine( "Modelo: " + Modelo);
+        Console.WriteLine( "Año: " + Año);
+        Console.WriteLine( "Tipo: " + Tipo);
+        Console.WriteLine( "Estado: " + Estado);
+        Console.WriteLine( "Kilometros: " + Kilometros);
         Console.WriteLine( "Numero de puertas: " + NumeroPuertas);
         Console.WriteLine( "Tipo de Trasmision: " + TipoTrasmision);
         Console.WriteLine( "Tipo de Combustible: " + TipoCombustible);
         Console.WriteLine( "Aire Acondicionado: " + TieneAireAcondicionado);
         Console.WriteLine( "Numero de Pasajeros: " + NumeroPasajeros);
+    }
+    public void realizarMantenimiento(){
+        Console.WriteLine("El Automovil neceita Mantenimiento");
+    }
+    public void consultarMantenimiento(){
+        Console.WriteLine("El mantenimiento del Automovil se realizara pronto");
     }
 }

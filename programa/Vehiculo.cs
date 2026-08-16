@@ -77,7 +77,7 @@ class Vehiculo{
         estado = "Sin estado";
         kilometros = 0;
     }
-    public void mostrarInformacion(){
+    virtual public void mostrarInformacion(){
         Console.WriteLine( "Codigo: " + Codigo);
         Console.WriteLine( "Marca: " + Marca);
         Console.WriteLine( "Modelo: " + Modelo);
@@ -101,13 +101,13 @@ class Vehiculo{
         if (string.IsNullOrWhiteSpace(nuevoEstado)){
             Console.WriteLine("ERROR: el estado no puede estar vacío.");
         }else if (nuevoEstado.Equals("Disponible", StringComparison.OrdinalIgnoreCase)){
-            Estado = "Disponible";
+            estado = "Disponible";
             Console.WriteLine("Estado actualizado correctamente.");
         }else if (nuevoEstado.Equals("En mantenimiento", StringComparison.OrdinalIgnoreCase)){
-            Estado = "En mantenimiento";
+            estado = "En mantenimiento";
             Console.WriteLine("Estado actualizado correctamente.");
         }else if (nuevoEstado.Equals("Fuera de servicio", StringComparison.OrdinalIgnoreCase)){
-            Estado = "Fuera de servicio";
+            estado = "Fuera de servicio";
             Console.WriteLine("Estado actualizado correctamente.");
         }else{
             Console.WriteLine("ERROR: estado no válido.");
@@ -118,8 +118,7 @@ class Vehiculo{
         }
     }
     public int calucularCosto(int dias){
-        total = 250 * dias;
-        return total;
+        return 250 * dias;
     }
      public int calcularCosto(int kilometrosTotales, int descuento){
         int costoPorKilometro;

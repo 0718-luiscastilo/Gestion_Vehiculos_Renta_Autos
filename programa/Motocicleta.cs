@@ -1,5 +1,5 @@
 using System;
-class Motocicleta : Vehiculo{
+class Motocicleta : Vehiculo, IMantenimiento{
     private int cilindrada;
     private string tipoMotocicleta;
     private bool tieneBaul;
@@ -39,7 +39,7 @@ class Motocicleta : Vehiculo{
         }
     }
     public Motocicleta(int codigo, string marca, string modelo, int año, string tipo, string estado,int kilometros,
-    int  Cilindrada, string tipoMotocicleta, bool tieneBaul, 
+    int  cilindrada, string tipoMotocicleta, bool tieneBaul, 
     int numeroCascos) : base(codigo, marca, modelo, año, tipo, estado, kilometros){
         this.cilindrada = cilindrada;
         this.tipoMotocicleta = tipoMotocicleta;
@@ -69,10 +69,23 @@ class Motocicleta : Vehiculo{
             Console.WriteLine("Número de pasajeros actualizado correctamente.");
         }
     }
-    public void mostrarespecificaciones(){
+    public override void mostrarInformacion(){
+        Console.WriteLine( "Codigo: " + Codigo);
+        Console.WriteLine( "Marca: " + Marca);
+        Console.WriteLine( "Modelo: " + Modelo);
+        Console.WriteLine( "Año: " + Año);
+        Console.WriteLine( "Tipo: " + Tipo);
+        Console.WriteLine( "Estado: " + Estado);
+        Console.WriteLine( "Kilometros: " + Kilometros);
         Console.WriteLine( "Cilindrada: " + Cilindrada);
         Console.WriteLine( "Tipo de Motocicleta: " + TipoMotocicleta);
         Console.WriteLine( "Tiene Baul: " + TieneBaul);
         Console.WriteLine( "Numero de Casco: " + NumeroCascos);
+    }
+    public void realizarMantenimiento(){
+        Console.WriteLine("La Motocicleta neceita Mantenimiento");
+    }
+    public void consultarMantenimiento(){
+        Console.WriteLine("El mantenimiento de La Motocicleta se realizara pronto");
     }
 }

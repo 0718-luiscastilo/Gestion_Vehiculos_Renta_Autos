@@ -1,5 +1,5 @@
 using System;
-class Camioneta : Vehiculo{
+class Camioneta : Vehiculo, IMantenimiento{
     private double capacidadCarga;
     private string tipoTraccion;
     private bool tieneDobleCabina;
@@ -59,10 +59,23 @@ class Camioneta : Vehiculo{
             Console.WriteLine("Número de pasajeros actualizado correctamente.");
         }
     }
-    public void mostrarespecificaciones(){
+    public override void mostrarInformacion(){
+        Console.WriteLine( "Codigo: " + Codigo);
+        Console.WriteLine( "Marca: " + Marca);
+        Console.WriteLine( "Modelo: " + Modelo);
+        Console.WriteLine( "Año: " + Año);
+        Console.WriteLine( "Tipo: " + Tipo);
+        Console.WriteLine( "Estado: " + Estado);
+        Console.WriteLine( "Kilometros: " + Kilometros);
         Console.WriteLine( "Capacidad de Carga: " + CapacidadCarga);
         Console.WriteLine( "Tipo de Traccion: " + TipoTraccion);
         Console.WriteLine( "Doble cabina: " + TieneDobleCabina);
         Console.WriteLine( "Numero de Pasajeros: " + NumeroPasajeros);
+    }
+    public void realizarMantenimiento(){
+        Console.WriteLine("La Camioneta neceita Mantenimiento");
+    }
+    public void consultarMantenimiento(){
+        Console.WriteLine("El mantenimiento de La Camioneta se realizara pronto");
     }
 }

@@ -12,3 +12,4 @@ F:\Programacion\Repositorios\Gestion_Vehiculos_Renta_Autos\programa\obj\Debug\ne
 F:\Programacion\Repositorios\Gestion_Vehiculos_Renta_Autos\programa\obj\Debug\net10.0\programa.pdb
 F:\Programacion\Repositorios\Gestion_Vehiculos_Renta_Autos\programa\obj\Debug\net10.0\programa.genruntimeconfig.cache
 F:\Programacion\Repositorios\Gestion_Vehiculos_Renta_Autos\programa\obj\Debug\net10.0\ref\programa.dll
+F:\Programacion\Repositorios\Gestion_Vehiculos_Renta_Autos\programa\obj\Debug\net10.0\programa.sourcelink.json
