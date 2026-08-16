@@ -83,7 +83,11 @@ class Motocicleta : Vehiculo, IMantenimiento{
         Console.WriteLine( "Numero de Casco: " + NumeroCascos);
     }
     public void realizarMantenimiento(){
-        Console.WriteLine("La Motocicleta neceita Mantenimiento");
+        if(Kilometros >= 1000){
+            Console.WriteLine("La Motocicleta necesita Mantenimiento.");
+        }else{
+            Console.WriteLine("La Motocicleta no necesita Mantenimiento.");
+        } 
     }
     public void consultarMantenimiento(){
         Console.WriteLine("El mantenimiento de La Motocicleta se realizara pronto");

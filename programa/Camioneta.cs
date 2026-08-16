@@ -73,7 +73,11 @@ class Camioneta : Vehiculo, IMantenimiento{
         Console.WriteLine( "Numero de Pasajeros: " + NumeroPasajeros);
     }
     public void realizarMantenimiento(){
-        Console.WriteLine("La Camioneta neceita Mantenimiento");
+        if(Kilometros >= 1000){
+            Console.WriteLine("La Camioneta necesita Mantenimiento.");
+        }else{
+            Console.WriteLine("La Camioneta no necesita Mantenimiento.");
+        } 
     }
     public void consultarMantenimiento(){
         Console.WriteLine("El mantenimiento de La Camioneta se realizara pronto");
