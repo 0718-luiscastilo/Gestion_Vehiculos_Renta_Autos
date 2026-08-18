@@ -1,17 +1,20 @@
 using System;
  public static int selecionarVehiculo(){
     int op;
-    Console.WriteLine("========================================");
-    Console.WriteLine("=====REGISTRAR VEHÍCULO =====");
-    Console.WriteLine("1.- Automovil.");
-    Console.WriteLine("2.- Camioneta.");
-    Console.WriteLine("3.- Motocicleta");
-    Console.WriteLine("Seleccione una opcion: ");
-    while (!int.TryParse(Console.ReadLine(), out op) || op < 1 || op > 3){
-        Console.Write("Error. Seleccione una opción válida (1-3): ");
+    while (true){
+        Console.WriteLine("========================================");
+        Console.WriteLine("===== REGISTRAR VEHÍCULO =====");
+        Console.WriteLine("1.- Automóvil");
+        Console.WriteLine("2.- Camioneta");
+        Console.WriteLine("3.- Motocicleta");
+        Console.Write("Seleccione una opción: ");
+
+        if (int.TryParse(Console.ReadLine(), out op) && op >= 1 && op <= 3) {
+            return op;
+        }
+        Console.WriteLine("ERROR: Seleccione una opción entre 1 y 3.");
     }
-    return op;
- }
+}
  public static void RegistrarVhiculo(Vehiculo[] vehiculo, ref int totalVehiculos, int MAX_VEHICULOS){
     if(totalVehiculos >= MAX_VEHICULOS){
         Console.WriteLine("Ya no hay espacio para mas Vwhiculos");
@@ -19,7 +22,7 @@ using System;
     }
     int opcion = selecionarVehiculo();
     switch(opcion){
-        case 1:
+        case 1:{
         Console.WriteLine(" Ingrese el Codigo: ");
         int codigo;
         while (!int.TryParse(Console.ReadLine(), out codigo) || codigo <= 0){
@@ -101,7 +104,14 @@ using System;
             Console.Write("Error. Ingrese un valor numérico mayor que 0: ");
         }
 
-        case 2:
+        Vehiculo a = new Automovil(codigo, marca,modelo, año, tipo, estado, kilometros, numeroPertas, 
+        tipoTrasmision, tipoCombustible, tieneAireAcondicionado, numeroPasajeros);
+        vehiculo[totalVehiculos] = a;
+        totalVehiculos++;
+        Console.WriteLine("Automóvil registrado correctamente.");
+        break;
+        }
+        case 2:{
         Console.WriteLine(" Ingrese el Codigo: ");
         int codigo;
         while (!int.TryParse(Console.ReadLine(), out codigo) || codigo <= 0){
@@ -163,19 +173,26 @@ using System;
             Console.Write("Error. Ingrese S para Sí o N para No: ");
             respuestaCabina = Console.ReadLine();
             }
-            bool respuestaCabina;
+            bool tieneDobleCabina;
             if (respuestaCabina == "S" || respuestaCabina == "s"){
-                respuestaCabina = true;
+                tieneDobleCabina = true;
             }else{
-                respuestaCabina = false;
+                tieneDobleCabina = false;
         }
         Console.WriteLine(" Ingrese los Numero de Psajeros: ");
         int numeroPasajeros;
         while (!int.TryParse(Console.ReadLine(), out numeroPasajeros) || numeroPasajeros <= 0){
             Console.Write("Error. Ingrese un valor numérico mayor que 0: ");
         }
+        Vehiculo c = new Camioneta(codigo, marca,modelo, año, tipo, estado, kilometros, capacidadCarga,
+        tipoTraccion,tieneDobleCabina,numeroPasajeros);
+        vehiculo[totalVehiculos] = c;
+        totalVehiculos++;
+        Console.WriteLine("Camioneta registrada correctamente.");
+        break;
+        }
 
-        case 3:
+        case 3:{
         Console.WriteLine(" Ingrese el Codigo: ");
         int codigo;
         while (!int.TryParse(Console.ReadLine(), out codigo) || codigo <= 0){
@@ -238,17 +255,23 @@ using System;
             Console.Write("Error. Ingrese S para Sí o N para No: ");
             respuestaBaul = Console.ReadLine();
             }
-            bool tieneADobleCabina;
+            bool tieneBaul;
             if (respuestaBaul == "S" || respuestaBaul == "s"){
-                respuestaBaul = true;
+                tieneBaul = true;
             }else{
-                respuestaBaul = false;
+                tieneBaul = false;
         }
         Console.WriteLine(" Ingrese los Numero de Cascos: ");
         int numeroCascos;
         while (!int.TryParse(Console.ReadLine(), out numeroCascos) || numeroCascos <= 0){
             Console.Write("Error. Ingrese un valor numérico mayor que 0: ");
         }
+        Vehiculo m = new Motocicleta(codigo, marca,modelo, año, tipo, estado, kilometros, cilindros,
+        tipoMotocicleta,tieneBaul, numeroCascos);
+        vehiculo[totalVehiculos] = m;
+        totalVehiculos++;
+        Console.WriteLine("Motocicleta registrada correctamente.");
+        break;
     }
 
 }
