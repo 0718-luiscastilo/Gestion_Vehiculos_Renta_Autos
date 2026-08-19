@@ -273,5 +273,37 @@ using System;
         Console.WriteLine("Motocicleta registrada correctamente.");
         break;
     }
-
+    }
+}
+public static void MostrarTodosLosVehiculos(Vehiculo[] vehiculo, int totalVehiculos){
+    if(totalVehiculos == 0 ){
+        Console.WriteLine("No hay vehículos registrados.");
+        return;
+    }
+    for(int i=0; i<totalVehiculos; i++){
+        vehiculo[i].mostrarInformacion();
+        Console.WriteLine("==============================");
+    }
+}
+public static void BuscarVehiculoPorCodigo(Vehiculo[] vehiculo, int totalVehiculos){
+    bool encontrado = false;
+    if(totalVehiculos == 0 ){
+        Console.WriteLine("No hay vehículos registrados.");
+        return;
+    }
+    int buscarCodigo;
+     Console.WriteLine("Ingrese el coodigo: ");
+     while (!int.TryParse(Console.ReadLine(), out buscarCodigo) || buscarCodigo <= 0){
+        Console.Write("Error. Ingrese un código numérico mayor que 0: ");
+    }
+    for(int i=0; i<totalVehiculos; i++){
+        if(vehiculo[i].Codigo == buscarCodigo){
+            encontrado = true;
+            vehiculo[i].mostrarInformacion();
+            break;
+        }
+    }
+    if(!encontrado){
+            Console.WriteLine("No se encontró un vehículo con ese código.");
+        }
 }
