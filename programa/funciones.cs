@@ -307,3 +307,69 @@ public static void BuscarVehiculoPorCodigo(Vehiculo[] vehiculo, int totalVehicul
             Console.WriteLine("No se encontró un vehículo con ese código.");
         }
 }
+public static void MostrarVehiculosDisponibles(Vehiculo[] vehiculo, int totalVehiculos){
+    bool hayDisponibles = false;
+    if(totalVehiculos == 0 ){
+        Console.WriteLine("No hay vehículos registrados.");
+        return;
+    }
+    for(int i=0; i<totalVehiculos; i++){
+        if(vehiculo[i].Estado == "Disponible"){
+            hayDisponibles = true;
+            vehiculo[i].mostrarInformacion();
+        }
+    }
+    if(!hayDisponibles){
+            Console.WriteLine("No se encontró un vehículo Dispobible.");
+        }
+}
+public static void MostrarVehiculosRentados(Vehiculo[] vehiculo, int totalVehiculos){
+    bool hayRentados = false;
+    if(totalVehiculos == 0 ){
+        Console.WriteLine("No hay vehículos registrados.");
+        return;
+    }
+    for(int i=0; i<totalVehiculos; i++){
+        if(vehiculo[i].Estado == "Rentado"){
+            hayRentados = true;
+            vehiculo[i].mostrarInformacion();
+        }
+    }
+    if(!hayRentados){
+            Console.WriteLine("No se encontró Vehiculos rentados.");
+        }
+}
+public static void cambioEstado(Vehiculo[] vehiculo, int totalVehiculos){
+    bool encontrado = false;
+    if(totalVehiculos == 0 ){
+        Console.WriteLine("No hay vehículos registrados.");
+        return;
+    }
+    int buscarCodigo;
+    Console.Write("Ingrese el código del vehículo: ");
+    while (!int.TryParse(Console.ReadLine(), out buscarCodigo) || buscarCodigo <= 0){
+            Console.Write("Error. Ingrese un valor numérico mayor que 0: ");
+    }
+    for(int i=0; i<totalVehiculos; i++){
+        if(vehiculo[i].Codigo == buscarCodigo){
+            encontrado = true;
+            Console.WriteLine("\n Vehiculo encontrado:");
+            vehiculo[i].mostrarInformacion();
+            Console.WriteLine("Ingrese el nuevo Estado (Disponible, Rentado, En mantenimiento, Fuera de servicio):");
+            string nuevoEstado = Console.ReadLine();
+            while (string.IsNullOrWhiteSpace(nuevoEstado) || (nuevoEstado != "Disponible" && nuevoEstado != "Rentado" && 
+            nuevoEstado != "En Mantenimiento" && nuevoEstado != "Fuera de Sevicio ")){
+                Console.Write("Estado inválido. Ingrese Disponible, Rentado, En mantenimiento, Fuera de servicio:");
+                nuevoEstado = Console.ReadLine();
+            }
+            vehiculo[i].cambiarEstado(nuevoEstado);
+            Console.WriteLine("\nEstado actualizado correctamente.\n");
+            Console.WriteLine("Información actualizada:");
+            vehiculo[i].mostrarInformacion();
+            break;
+        }
+    }
+    if(!encontrado){
+        Console.WriteLine("No se encontró un vehículo con ese código.");
+    }
+}
