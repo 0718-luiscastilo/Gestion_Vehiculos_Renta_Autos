@@ -102,6 +102,8 @@ class Vehiculo{
             Console.WriteLine("ERROR: el estado no puede estar vacío.");
         }else if (nuevoEstado.Equals("Disponible", StringComparison.OrdinalIgnoreCase)){
             estado = "Disponible";
+        }else if (nuevoEstado.Equals("Rentado", StringComparison.OrdinalIgnoreCase)){
+            estado = "Rentado";
             Console.WriteLine("Estado actualizado correctamente.");
         }else if (nuevoEstado.Equals("En mantenimiento", StringComparison.OrdinalIgnoreCase)){
             estado = "En mantenimiento";
@@ -117,27 +119,16 @@ class Vehiculo{
             Console.WriteLine("- Fuera de servicio");
         }
     }
-    public int calucularCosto(int dias){
+    public int calcularCosto(int dias){
         return 250 * dias;
     }
-     public int calcularCosto(int kilometrosTotales, int descuento){
-        int costoPorKilometro;
-        if (kilometrosTotales > 3000){
-            costoPorKilometro = 900;
+     public int calcularCosto(int dias, int descuento){
+        int total = 250 * dias;
+        if (descuento < 0 || descuento > 100){
+            Console.WriteLine("ERROR: El descuento debe estar entre 0 y 100.");
+            return total;
         }
-        else if (kilometrosTotales > 2000){
-            costoPorKilometro = 600;
-        }else if (kilometrosTotales > 1000){
-            costoPorKilometro = 300;
-        }else{
-            costoPorKilometro = 100;
-        }
-        int total = costoPorKilometro * kilometrosTotales;
-
         int montoDescuento = total * descuento / 100;
-
-        total = total - montoDescuento;
-
-        return total;
+        return total - montoDescuento;
     }
 }

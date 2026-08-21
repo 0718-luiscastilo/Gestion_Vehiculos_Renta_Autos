@@ -405,3 +405,55 @@ public static void CalcularPrecioPromedioRenta(Vehiculo[] vehiculo, int totalVeh
     Console.WriteLine("El promedio de Renta es: " + promedio);
 
 }
+public static void CantidadVehiculosPorTipo(Vehiculo[] vehiculo, int totalVehiculos){
+     if(totalVehiculos == 0 ){
+        Console.WriteLine("No hay vehículos registrados.");
+        return;
+    }
+    int contadorAutomoviles = 0;
+    int contadorCamionetas = 0;
+    int contadorMotocicletas = 0;
+    for(int i=0; i<totalVehiculos; i++){
+        if(vehiculo[i] is Automovil){
+            contadorAutomoviles++;
+        }
+        if(vehiculo[i] is Camioneta){
+            contadorCamionetas++;
+        }
+        if(vehiculo[i] is Motocicleta){
+            contadorMotocicletas++;
+        }
+    }
+    Console.Write("===== CANTIDAD DE VEHÍCULOS POR TIPO =====");
+    Console.Write("Automóviles: " + contadorAutomoviles);
+    Console.Write("Camionetas: " + contadorCamionetas);
+    Console.Write("Motocicletas: " + contadorMotocicletas);
+    Console.Write("Total de vehículos: " + totalVehiculos);    
+
+}
+public static void RealizarMantenimiento(Vehiculo[] vehiculo, int totalVehiculos){
+    if(totalVehiculos == 0 ){
+        Console.WriteLine("No hay vehículos registrados.");
+        return;
+    }
+    bool encontrado = false;
+    int buscarCodigo;
+     Console.WriteLine("Ingrese el codigo: ");
+     while (!int.TryParse(Console.ReadLine(), out buscarCodigo) || buscarCodigo <= 0){
+        Console.Write("Error. Ingrese un código numérico mayor que 0: ");
+    }
+    for(int i=0; i<totalVehiculos; i++){
+        if(vehiculo[i].Codigo == buscarCodigo){
+            encontrado = true;
+            Console.WriteLine("\n===== VEHÍCULO ENCONTRADO =====");
+            vehiculo[i].mostrarInformacion();
+            Console.WriteLine("\n===== RESULTADO DEL MANTENIMIENTO =====");
+            IMantenimiento mantenimiento = (IMantenimiento)vehiculo[i];
+            mantenimiento.realizarMantenimiento();
+            break;
+        }
+    }
+    if(!encontrado){
+            Console.WriteLine("No se encontró un vehículo con ese código.");
+        }
+}
