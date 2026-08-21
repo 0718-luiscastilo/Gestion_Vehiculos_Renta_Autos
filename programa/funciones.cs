@@ -373,3 +373,35 @@ public static void cambioEstado(Vehiculo[] vehiculo, int totalVehiculos){
         Console.WriteLine("No se encontró un vehículo con ese código.");
     }
 }
+public static void MostrarVehiculoMayorKilometraje(Vehiculo[] vehiculo, int totalVehiculos){
+    if(totalVehiculos == 0 ){
+        Console.WriteLine("No hay vehículos registrados.");
+        return;
+    }
+    int posicionMayor = 0;
+    for(int i=1; i<totalVehiculos; i++){
+        if(vehiculo[i].Kilometros > vehiculo[posicionMayor].Kilometros){
+            posicionMayor =i;
+        }
+        Console.WriteLine("===== VEHÍCULO CON MAYOR KILOMETRAJE =====");
+        vehiculo[posicionMayor].mostrarInformacion();
+    }
+}
+public static void CalcularPrecioPromedioRenta(Vehiculo[] vehiculo, int totalVehiculos){
+    if(totalVehiculos == 0 ){
+        Console.WriteLine("No hay vehículos registrados.");
+        return;
+    }
+    double sumaPrecios = 0;
+    int dias;
+    Console.WriteLine("Ingrese la cantidad de días de renta: ");
+    while (!int.TryParse(Console.ReadLine(), out dias) || dias <= 0){
+            Console.Write("Error. Ingrese un valor numérico mayor que 0: ");
+    }
+    for(int i=0; i<totalVehiculos; i++){
+        sumaPrecios += vehiculo[i].calcularCosto(dias);
+    }
+    double promedio = sumaPrecios /totalVehiculos;
+    Console.WriteLine("El promedio de Renta es: " + promedio);
+
+}
