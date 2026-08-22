@@ -1,5 +1,6 @@
 using System;
- public static int selecionarVehiculo(){
+public class Funciones{
+    public static int selecionarVehiculo(){
     int op;
     while (true){
         Console.WriteLine("========================================");
@@ -105,7 +106,7 @@ using System;
         }
 
         Vehiculo a = new Automovil(codigo, marca,modelo, año, tipo, estado, kilometros, numeroPertas, 
-        tipoTrasmision, tipoCombustible, tieneAireAcondicionado, numeroPasajeros);
+        tipotrasmision, tipoCombustible, tieneAireAcondicionado, numeroPasajeros);
         vehiculo[totalVehiculos] = a;
         totalVehiculos++;
         Console.WriteLine("Automóvil registrado correctamente.");
@@ -185,7 +186,7 @@ using System;
             Console.Write("Error. Ingrese un valor numérico mayor que 0: ");
         }
         Vehiculo c = new Camioneta(codigo, marca,modelo, año, tipo, estado, kilometros, capacidadCarga,
-        tipoTraccion,tieneDobleCabina,numeroPasajeros);
+        tipoTaccion,tieneDobleCabina,numeroPasajeros);
         vehiculo[totalVehiculos] = c;
         totalVehiculos++;
         Console.WriteLine("Camioneta registrada correctamente.");
@@ -482,3 +483,6 @@ public static int MostrarMenu(){
         Console.WriteLine();
     }while(true);
 }
+
+}
+ 

@@ -1,5 +1,5 @@
 using System;
-class Motocicleta : Vehiculo, IMantenimiento{
+public class Motocicleta : Vehiculo, IMantenimiento{
     private int cilindrada;
     private string tipoMotocicleta;
     private bool tieneBaul;

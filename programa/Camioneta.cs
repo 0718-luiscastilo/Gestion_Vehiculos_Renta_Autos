@@ -1,5 +1,5 @@
 using System;
-class Camioneta : Vehiculo, IMantenimiento{
+public class Camioneta : Vehiculo, IMantenimiento{
     private double capacidadCarga;
     private string tipoTraccion;
     private bool tieneDobleCabina;

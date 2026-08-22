@@ -1,5 +1,5 @@
 using System;
-class Automovil : Vehiculo, IMantenimiento{
+public class Automovil : Vehiculo, IMantenimiento{
     private int numeroPuertas;
     private string tipoTrasmision;
     private string tipoCombustible;

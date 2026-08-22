@@ -6,40 +6,40 @@ public class Program{
         Vehiculo[]  vehiculo = new Vehiculo[MAX_VEHICULOS];
         int opcion;
         do{
-            opcion = MostrarMenu();
+            opcion = Funciones.MostrarMenu();
             switch(opcion){
                 case 1:
-                RegistrarVhiculo(vehiculo, ref totalVehiculos, MAX_VEHICULOS);
+                Funciones.RegistrarVhiculo(vehiculo, ref totalVehiculos, MAX_VEHICULOS);
                 break;
                 case 2:
-                MostrarTodosLosVehiculos(vehiculo, totalVehiculos);
+                Funciones.MostrarTodosLosVehiculos(vehiculo, totalVehiculos);
                 break;
                 case 3:
-                BuscarVehiculoPorCodigo(vehiculo, totalVehiculos);
+                Funciones.BuscarVehiculoPorCodigo(vehiculo, totalVehiculos);
                 break;
                 case 4:
-                MostrarVehiculosDisponibles(vehiculo, totalVehiculos);
+                Funciones.MostrarVehiculosDisponibles(vehiculo, totalVehiculos);
                 break;
                 case 5:
-                MostrarVehiculosRentados(vehiculo, totalVehiculos);
+                Funciones.MostrarVehiculosRentados(vehiculo, totalVehiculos);
                 break;
                 case 6:
-                cambiarEstado(vehiculo, totalVehiculos);
+                Funciones.cambioEstado(vehiculo, totalVehiculos);
                 break;
                 case 7:
-                MostrarVehiculoMayorKilometraje(vehiculo, totalVehiculos);
+                Funciones.MostrarVehiculoMayorKilometraje(vehiculo, totalVehiculos);
                 break;
                 case 8:
-                CalcularPrecioPromedioRenta(vehiculo, totalVehiculos);
+                Funciones.CalcularPrecioPromedioRenta(vehiculo, totalVehiculos);
                 break;
                 case 9:
-                CantidadVehiculosPorTipo(vehiculo, totalVehiculos);
+                Funciones.CantidadVehiculosPorTipo(vehiculo, totalVehiculos);
                 break;
                 case 10:
-                RealizarMantenimiento(vehiculo, totalVehiculos);
+                Funciones.RealizarMantenimiento(vehiculo, totalVehiculos);
                 break;
                 case 11:
-                Console.WriteLine("Gracias por utilizar el Sistema de Gestión de Activos..");
+                Console.WriteLine("Gracias por utilizar el Sistema..");
                 break;
             }
         }while(opcion != 11);

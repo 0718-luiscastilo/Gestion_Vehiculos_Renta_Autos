@@ -1,5 +1,5 @@
 using System;
-class Vehiculo{
+public class Vehiculo{
     private int codigo;
     private string marca;
     private string modelo;
