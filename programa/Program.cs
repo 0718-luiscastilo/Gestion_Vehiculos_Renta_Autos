@@ -4,25 +4,44 @@ public class Program{
         const int MAX_VEHICULOS =100;
         int totalVehiculos =0;
         Vehiculo[]  vehiculo = new Vehiculo[MAX_VEHICULOS];
-
-        Automovil vehiculo1 = new Automovil(1,"Nissan","V25",2025,"Normal","Disponible",2000,4,"Standar","Disel",true,4);
-        vehiculo[totalVehiculos] = vehiculo1;
-        totalVehiculos++;
-        Camioneta vehiculo2 = new Camioneta(2,"Vento","V01",2025,"Normal","Disponible",2026,300,"Standar",true,5);
-        vehiculo[totalVehiculos] = vehiculo2;
-        totalVehiculos++;
-        Motocicleta vehiculo3 = new Motocicleta(3,"Kia","NW23",2024,"Doble","Disponible",2024,1,"Automatica",true,1);
-        vehiculo[totalVehiculos] = vehiculo3;
-        totalVehiculos++;
-        
-        for(int i=0; i<totalVehiculos;i++){
-            vehiculo[i].mostrarInformacion();
-            Console.WriteLine("------------------------------");
-            
-            IMantenimiento mantenimiento = (IMantenimiento)vehiculo[i];
-            mantenimiento.realizarMantenimiento();
-            mantenimiento.consultarMantenimiento();
-            Console.WriteLine("==============================");
-        }
+        int opcion;
+        do{
+            opcion = MostrarMenu();
+            switch(opcion){
+                case 1:
+                RegistrarVhiculo(vehiculo, ref totalVehiculos, MAX_VEHICULOS);
+                break;
+                case 2:
+                MostrarTodosLosVehiculos(vehiculo, totalVehiculos);
+                break;
+                case 3:
+                BuscarVehiculoPorCodigo(vehiculo, totalVehiculos);
+                break;
+                case 4:
+                MostrarVehiculosDisponibles(vehiculo, totalVehiculos);
+                break;
+                case 5:
+                MostrarVehiculosRentados(vehiculo, totalVehiculos);
+                break;
+                case 6:
+                cambiarEstado(vehiculo, totalVehiculos);
+                break;
+                case 7:
+                MostrarVehiculoMayorKilometraje(vehiculo, totalVehiculos);
+                break;
+                case 8:
+                CalcularPrecioPromedioRenta(vehiculo, totalVehiculos);
+                break;
+                case 9:
+                CantidadVehiculosPorTipo(vehiculo, totalVehiculos);
+                break;
+                case 10:
+                RealizarMantenimiento(vehiculo, totalVehiculos);
+                break;
+                case 11:
+                Console.WriteLine("Gracias por utilizar el Sistema de Gestión de Activos..");
+                break;
+            }
+        }while(opcion != 11);
     }
 }

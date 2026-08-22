@@ -457,3 +457,28 @@ public static void RealizarMantenimiento(Vehiculo[] vehiculo, int totalVehiculos
             Console.WriteLine("No se encontró un vehículo con ese código.");
         }
 }
+public static int MostrarMenu(){
+    int op;
+    do{
+        Console.WriteLine("========================================");
+        Console.WriteLine("=====SISTEMA DE RENTA DE VEHÍCULOS  =====");
+        Console.WriteLine("========================================");
+        Console.WriteLine("1.- Registrar vehículo.");
+        Console.WriteLine("2.- Mostrar todos los vehículos.");
+        Console.WriteLine("3.- Buscar vehículo por código");
+        Console.WriteLine("4.- Mostrar vehículos disponibles");
+        Console.WriteLine("5.- Mostrar vehículos rentados.");
+        Console.WriteLine("6.- Cambiar estado.");
+        Console.WriteLine("7.- Vehículo con mayor kilometraje.");
+        Console.WriteLine("8.- Calcular precio promedio de renta.");
+        Console.WriteLine("9.- Cantidad de vehículos por tipo.");
+        Console.WriteLine("10.- Realizar mantenimiento.");
+        Console.WriteLine("11.- Salir ");
+        Console.WriteLine("Seleccione una opcion: ");
+        if (int.TryParse(Console.ReadLine(), out op) && op >= 1 && op <= 11){
+            return op;
+        }
+        Console.WriteLine("Error. Debe seleccionar una opcion valida. ");
+        Console.WriteLine();
+    }while(true);
+}
