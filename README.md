@@ -14,22 +14,22 @@ El proyecto fue desarrollado como parte del proceso de aprendizaje de **C# y Pro
 
 El sistema permite:
 
-* Registrar vehículos
-* Registrar automóviles
-* Registrar camionetas
-* Registrar motocicletas
-* Mostrar todos los vehículos registrados
-* Buscar un vehículo por código
-* Mostrar vehículos disponibles
-* Mostrar vehículos rentados
-* Cambiar el estado de un vehículo
-* Identificar el vehículo con mayor kilometraje
-* Calcular el precio promedio de renta
-* Contar la cantidad de vehículos por tipo
-* Realizar mantenimiento a un vehículo
-* Consultar información relacionada con el mantenimiento
-* Validar los datos ingresados por el usuario
-* Navegar mediante un menú interactivo
+- Registrar vehículos
+- Registrar automóviles
+- Registrar camionetas
+- Registrar motocicletas
+- Mostrar todos los vehículos registrados
+- Buscar un vehículo por código
+- Mostrar vehículos disponibles
+- Mostrar vehículos rentados
+- Cambiar el estado de un vehículo
+- Identificar el vehículo con mayor kilometraje
+- Calcular el precio promedio de renta
+- Contar la cantidad de vehículos por tipo
+- Realizar mantenimiento a un vehículo
+- Consultar información relacionada con el mantenimiento
+- Validar los datos ingresados por el usuario
+- Navegar mediante un menú interactivo
 
 ---
 
@@ -57,13 +57,13 @@ Vehiculo
 
 Contiene información general como:
 
-* Código
-* Marca
-* Modelo
-* Año
-* Tipo
-* Estado
-* Kilómetros
+- Código
+- Marca
+- Modelo
+- Año
+- Tipo
+- Estado
+- Kilómetros
 
 ---
 
@@ -73,29 +73,29 @@ Contiene información general como:
 
 Incluye características específicas como:
 
-* Número de puertas
-* Tipo de transmisión
-* Tipo de combustible
-* Aire acondicionado
-* Número de pasajeros
+- Número de puertas
+- Tipo de transmisión
+- Tipo de combustible
+- Aire acondicionado
+- Número de pasajeros
 
 #### 🚙 Camioneta
 
 Incluye características específicas como:
 
-* Capacidad de carga
-* Tipo de tracción
-* Doble cabina
-* Número de pasajeros
+- Capacidad de carga
+- Tipo de tracción
+- Doble cabina
+- Número de pasajeros
 
 #### 🏍️ Motocicleta
 
 Incluye características específicas como:
 
-* Cilindrada
-* Tipo de motocicleta
-* Baúl
-* Número de cascos
+- Cilindrada
+- Tipo de motocicleta
+- Baúl
+- Número de cascos
 
 ---
 
@@ -105,43 +105,43 @@ Durante el desarrollo del proyecto se utilizaron los siguientes conceptos:
 
 ### 🔹 Fundamentos de C#
 
-* Variables
-* Tipos de datos
-* Operadores
-* Condicionales
-* Bucles
-* Métodos
-* Arreglos
-* Cadenas de texto
-* Validación de datos
+- Variables
+- Tipos de datos
+- Operadores
+- Condicionales
+- Bucles
+- Métodos
+- Arreglos
+- Cadenas de texto
+- Validación de datos
 
 ### 🔹 Programación Orientada a Objetos
 
-* Clases
-* Objetos
-* Encapsulamiento
-* Propiedades
-* Constructores
-* Herencia
-* Polimorfismo
-* Clases abstractas
-* Métodos virtuales
-* `override`
-* Interfaces
-* Casting
-* Operador `is`
-* Sobrecarga de métodos
+- Clases
+- Objetos
+- Encapsulamiento
+- Propiedades
+- Constructores
+- Herencia
+- Polimorfismo
+- Clases abstractas
+- Métodos virtuales
+- `override`
+- Interfaces
+- Casting
+- Operador `is`
+- Sobrecarga de métodos
 
 ---
 
 ## 🛠️ Tecnologías Utilizadas
 
-* C#
-* .NET
-* Aplicación de consola
-* Visual Studio Code
-* Git
-* GitHub
+- C#
+- .NET
+- Aplicación de consola
+- Visual Studio Code
+- Git
+- GitHub
 
 ---
 
@@ -260,16 +260,16 @@ Contar tipos
 
 Este proyecto permitió reforzar conceptos importantes utilizados en el desarrollo de aplicaciones orientadas a objetos:
 
-* Diseño de una jerarquía de clases.
-* Reutilización de código mediante herencia.
-* Uso de polimorfismo para almacenar diferentes objetos en un mismo arreglo.
-* Implementación de interfaces.
-* Uso de métodos sobrecargados.
-* Validación de entradas del usuario.
-* Búsqueda de información mediante ciclos.
-* Uso de contadores y acumuladores.
-* Organización de la lógica del programa mediante funciones.
-* Separación del proyecto en diferentes clases y archivos.
+- Diseño de una jerarquía de clases.
+- Reutilización de código mediante herencia.
+- Uso de polimorfismo para almacenar diferentes objetos en un mismo arreglo.
+- Implementación de interfaces.
+- Uso de métodos sobrecargados.
+- Validación de entradas del usuario.
+- Búsqueda de información mediante ciclos.
+- Uso de contadores y acumuladores.
+- Organización de la lógica del programa mediante funciones.
+- Separación del proyecto en diferentes clases y archivos.
 
 ---
 
@@ -277,19 +277,19 @@ Este proyecto permitió reforzar conceptos importantes utilizados en el desarrol
 
 Algunas funcionalidades que podrían agregarse en futuras versiones son:
 
-* Modificar información de vehículos.
-* Eliminar vehículos.
-* Registrar clientes.
-* Realizar procesos completos de renta y devolución.
-* Calcular costos según el tipo de vehículo.
-* Guardar información en archivos.
-* Implementar colecciones genéricas como `List<T>`.
-* Conectar el sistema con una base de datos.
-* Implementar Entity Framework.
-* Crear una API.
-* Crear una interfaz gráfica o aplicación web.
-* Agregar autenticación de usuarios.
-* Generar reportes.
+- Modificar información de vehículos.
+- Eliminar vehículos.
+- Registrar clientes.
+- Realizar procesos completos de renta y devolución.
+- Calcular costos según el tipo de vehículo.
+- Guardar información en archivos.
+- Implementar colecciones genéricas como `List<T>`.
+- Conectar el sistema con una base de datos.
+- Implementar Entity Framework.
+- Crear una API.
+- Crear una interfaz gráfica o aplicación web.
+- Agregar autenticación de usuarios.
+- Generar reportes.
 
 ---
 
@@ -307,12 +307,12 @@ El proyecto representa un paso en el desarrollo de aplicaciones más organizadas
 
 Estudiante y desarrollador en formación, enfocado en fortalecer sus conocimientos en:
 
-* C#
-* C++
-* Java
-* Python
-* Programación Orientada a Objetos
-* Desarrollo de Software
+- C#
+- C++
+- Java
+- Python
+- Programación Orientada a Objetos
+- Desarrollo de Software
 
 ---
 
