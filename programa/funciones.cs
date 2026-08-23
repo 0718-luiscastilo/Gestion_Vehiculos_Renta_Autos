@@ -330,17 +330,19 @@ public static void MostrarVehiculosRentados(Vehiculo[] vehiculo, int totalVehicu
         Console.WriteLine("No hay vehículos registrados.");
         return;
     }
+    Console.WriteLine("===== VEHÍCULOS DISPONIBLES =====");
     for(int i=0; i<totalVehiculos; i++){
         if(vehiculo[i].Estado == "Rentado"){
             hayRentados = true;
             vehiculo[i].mostrarInformacion();
+            Console.WriteLine("==============================");
         }
     }
     if(!hayRentados){
             Console.WriteLine("No se encontró Vehiculos rentados.");
         }
 }
-public static void cambioEstado(Vehiculo[] vehiculo, int totalVehiculos){
+public static void CambiarEstado(Vehiculo[] vehiculo, int totalVehiculos){
     bool encontrado = false;
     if(totalVehiculos == 0 ){
         Console.WriteLine("No hay vehículos registrados.");
@@ -359,7 +361,7 @@ public static void cambioEstado(Vehiculo[] vehiculo, int totalVehiculos){
             Console.WriteLine("Ingrese el nuevo Estado (Disponible, Rentado, En mantenimiento, Fuera de servicio):");
             string nuevoEstado = Console.ReadLine();
             while (string.IsNullOrWhiteSpace(nuevoEstado) || (nuevoEstado != "Disponible" && nuevoEstado != "Rentado" && 
-            nuevoEstado != "En Mantenimiento" && nuevoEstado != "Fuera de Sevicio ")){
+            nuevoEstado != "En Mantenimiento" && nuevoEstado != "Fuera de Servicio ")){
                 Console.Write("Estado inválido. Ingrese Disponible, Rentado, En mantenimiento, Fuera de servicio:");
                 nuevoEstado = Console.ReadLine();
             }
@@ -374,19 +376,19 @@ public static void cambioEstado(Vehiculo[] vehiculo, int totalVehiculos){
         Console.WriteLine("No se encontró un vehículo con ese código.");
     }
 }
-public static void MostrarVehiculoMayorKilometraje(Vehiculo[] vehiculo, int totalVehiculos){
-    if(totalVehiculos == 0 ){
+public static void MostrarVehiculoMayorKilometraje(Vehiculo[] vehiculo, int totalVehiculos) {
+    if (totalVehiculos == 0){
         Console.WriteLine("No hay vehículos registrados.");
         return;
     }
     int posicionMayor = 0;
-    for(int i=1; i<totalVehiculos; i++){
-        if(vehiculo[i].Kilometros > vehiculo[posicionMayor].Kilometros){
-            posicionMayor =i;
+    for (int i = 1; i < totalVehiculos; i++){
+        if (vehiculo[i].Kilometros > vehiculo[posicionMayor].Kilometros){
+            posicionMayor = i;
         }
-        Console.WriteLine("===== VEHÍCULO CON MAYOR KILOMETRAJE =====");
-        vehiculo[posicionMayor].mostrarInformacion();
     }
+    Console.WriteLine("===== VEHÍCULO CON MAYOR KILOMETRAJE =====");
+    vehiculo[posicionMayor].mostrarInformacion();
 }
 public static void CalcularPrecioPromedioRenta(Vehiculo[] vehiculo, int totalVehiculos){
     if(totalVehiculos == 0 ){

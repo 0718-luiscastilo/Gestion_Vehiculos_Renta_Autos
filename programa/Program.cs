@@ -24,7 +24,7 @@ public class Program{
                 Funciones.MostrarVehiculosRentados(vehiculo, totalVehiculos);
                 break;
                 case 6:
-                Funciones.cambioEstado(vehiculo, totalVehiculos);
+                Funciones.CambiarEstado(vehiculo, totalVehiculos);
                 break;
                 case 7:
                 Funciones.MostrarVehiculoMayorKilometraje(vehiculo, totalVehiculos);

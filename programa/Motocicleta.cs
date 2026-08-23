@@ -62,7 +62,7 @@ public class Motocicleta : Vehiculo, IMantenimiento{
 
     }
     public void CambiarNumeroCascos(int cantidadCascos){
-        if (cantidadCascos < 0){
+        if (cantidadCascos <= 0){
             Console.WriteLine("ERROR: El número de pasajeros debe ser mayor que 0.");
         }else{
             numeroCascos = cantidadCascos;

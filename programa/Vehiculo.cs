@@ -102,6 +102,7 @@ public class Vehiculo{
             Console.WriteLine("ERROR: el estado no puede estar vacío.");
         }else if (nuevoEstado.Equals("Disponible", StringComparison.OrdinalIgnoreCase)){
             estado = "Disponible";
+            Console.WriteLine("Estado actualizado correctamente.");
         }else if (nuevoEstado.Equals("Rentado", StringComparison.OrdinalIgnoreCase)){
             estado = "Rentado";
             Console.WriteLine("Estado actualizado correctamente.");
@@ -112,12 +113,11 @@ public class Vehiculo{
             estado = "Fuera de servicio";
             Console.WriteLine("Estado actualizado correctamente.");
         }else{
-            Console.WriteLine("ERROR: estado no válido.");
             Console.WriteLine("Estados permitidos:");
             Console.WriteLine("- Disponible");
+            Console.WriteLine("- Rentado");
             Console.WriteLine("- En mantenimiento");
             Console.WriteLine("- Fuera de servicio");
-        }
     }
     public int calcularCosto(int dias){
         return 250 * dias;

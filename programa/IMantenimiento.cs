@@ -1,5 +1,5 @@
 using System;
-interface IMantenimiento{
+public interface IMantenimiento{
     void realizarMantenimiento();
     void consultarMantenimiento();
 }
