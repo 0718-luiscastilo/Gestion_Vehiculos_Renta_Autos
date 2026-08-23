@@ -361,7 +361,7 @@ public static void CambiarEstado(Vehiculo[] vehiculo, int totalVehiculos){
             Console.WriteLine("Ingrese el nuevo Estado (Disponible, Rentado, En mantenimiento, Fuera de servicio):");
             string nuevoEstado = Console.ReadLine();
             while (string.IsNullOrWhiteSpace(nuevoEstado) || (nuevoEstado != "Disponible" && nuevoEstado != "Rentado" && 
-            nuevoEstado != "En Mantenimiento" && nuevoEstado != "Fuera de Servicio ")){
+            nuevoEstado != "En mantenimiento" && nuevoEstado != "Fuera de Servicio")){
                 Console.Write("Estado inválido. Ingrese Disponible, Rentado, En mantenimiento, Fuera de servicio:");
                 nuevoEstado = Console.ReadLine();
             }
@@ -427,11 +427,11 @@ public static void CantidadVehiculosPorTipo(Vehiculo[] vehiculo, int totalVehicu
             contadorMotocicletas++;
         }
     }
-    Console.Write("===== CANTIDAD DE VEHÍCULOS POR TIPO =====");
-    Console.Write("Automóviles: " + contadorAutomoviles);
-    Console.Write("Camionetas: " + contadorCamionetas);
-    Console.Write("Motocicletas: " + contadorMotocicletas);
-    Console.Write("Total de vehículos: " + totalVehiculos);    
+    Console.WriteLine("===== CANTIDAD DE VEHÍCULOS POR TIPO =====");
+    Console.WriteLine("Automóviles: " + contadorAutomoviles);
+    Console.WriteLine("Camionetas: " + contadorCamionetas);
+    Console.WriteLine("Motocicletas: " + contadorMotocicletas);
+    Console.WriteLine("Total de vehículos: " + totalVehiculos);   
 
 }
 public static void RealizarMantenimiento(Vehiculo[] vehiculo, int totalVehiculos){

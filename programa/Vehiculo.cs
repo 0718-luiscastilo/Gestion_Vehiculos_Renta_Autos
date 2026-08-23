@@ -119,6 +119,7 @@ public class Vehiculo{
             Console.WriteLine("- En mantenimiento");
             Console.WriteLine("- Fuera de servicio");
     }
+    }
     public int calcularCosto(int dias){
         return 250 * dias;
     }
